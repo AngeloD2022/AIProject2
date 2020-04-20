@@ -9,6 +9,7 @@ public:
     NeuralNetwork();
 private:
     QList<Layer*> layers;
+    void randomize();
 };
 
 #endif // NEURALNETWORK_H
