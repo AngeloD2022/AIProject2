@@ -16,12 +16,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    NeuralNetworkLibrary/backpropagationworker.cpp \
+    NeuralNetworkLibrary/calc.cpp \
     NeuralNetworkLibrary/layer.cpp \
     NeuralNetworkLibrary/neuralnetwork.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    NeuralNetworkLibrary/backpropagationworker.h \
+    NeuralNetworkLibrary/calc.h \
     NeuralNetworkLibrary/layer.h \
     NeuralNetworkLibrary/neuralnetwork.h \
     mainwindow.h

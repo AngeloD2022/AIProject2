@@ -6,9 +6,12 @@
 class NeuralNetwork
 {
 public:
-    NeuralNetwork();
+    NeuralNetwork(int *configuration);
+
 private:
-    QList<Layer*> layers;
+
+    // # Layers = total layers - input
+    QList<Layer*> *layers;
     void randomize();
 };
 
