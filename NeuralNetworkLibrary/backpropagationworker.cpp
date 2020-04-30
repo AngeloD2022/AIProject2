@@ -1,6 +1,5 @@
 #include "backpropagationworker.h"
 
-BackpropagationWorker::BackpropagationWorker(QObject *parent) : QObject(parent)
-{
+BackpropagationWorker::BackpropagationWorker(QObject *parent) : QObject(parent) {
 
 }

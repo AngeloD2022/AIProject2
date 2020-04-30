@@ -2,10 +2,10 @@
 #define CALC_H
 
 
-class Calc
-{
+class Calc {
 public:
     Calc();
+
     static double sigmoid(double x);
 };
 

@@ -1,8 +1,8 @@
 #include "calc.h"
 #include <QtMath>
-Calc::Calc()
-{
+
+Calc::Calc() {
 
 }
 
-double Calc::sigmoid(double x){    return (1/1*qPow(M_E,-1*x));     }
+double Calc::sigmoid(double x) { return (1 / 1 * qPow(M_E, -1 * x)); }

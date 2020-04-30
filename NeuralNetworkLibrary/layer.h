@@ -1,16 +1,19 @@
 #ifndef LAYER_H
 #define LAYER_H
+
 #include "calc.h"
 #include <QVector>
+#include <QList>
 
-class Layer
-{
+class Layer {
 
 public:
     Layer(int inputs, int outputs);
+
 private:
 
-    QVector<QList<double*>> weights;
+    QVector<QList<double *>> weights;
     double *biases;
 };
+
 #endif // LAYER_H

@@ -3,9 +3,8 @@
 
 #include <QObject>
 
-class BackpropagationWorker : public QObject
-{
-    Q_OBJECT
+class BackpropagationWorker : public QObject {
+Q_OBJECT
 public:
     explicit BackpropagationWorker(QObject *parent = nullptr);
 
