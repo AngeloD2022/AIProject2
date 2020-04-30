@@ -2,17 +2,20 @@
 #define NEURALNETWORK_H
 #include "layer.h"
 #include "QList"
+#include <QtMath>
 
 class NeuralNetwork
 {
 public:
-    NeuralNetwork(int *configuration);
+    NeuralNetwork(int *configuration[]);
 
 private:
 
     // # Layers = total layers - input
     QList<Layer*> *layers;
-    void randomize();
+    int *config;
+
+
 };
 
 #endif // NEURALNETWORK_H
