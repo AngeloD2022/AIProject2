@@ -13,8 +13,12 @@ public:
 
 private:
 
-    QVector<QVector<double>> *weights;
-    QVector<double> *biases;
+    int inputs;
+    int outputs;
+    QVector<QVector<double>> weights;
+    QVector<double> biases;
+
+    QVector<double> computeActivations(QVector<double> inputs);
 };
 
 #endif // LAYER_H
