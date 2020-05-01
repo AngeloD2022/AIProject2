@@ -2,6 +2,7 @@
 #define LAYER_H
 
 #include "calc.h"
+#include <QtMath>
 #include <QVector>
 #include <QList>
 
@@ -12,8 +13,8 @@ public:
 
 private:
 
-    QVector<QList<double *>> weights;
-    double *biases;
+    QVector<QVector<double>> *weights;
+    QVector<double> *biases;
 };
 
 #endif // LAYER_H
