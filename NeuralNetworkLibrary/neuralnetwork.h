@@ -7,7 +7,7 @@
 
 class NeuralNetwork {
 public:
-    NeuralNetwork(int *configuration[]);
+    NeuralNetwork(QList<int> configuration);
 
 private:
 
