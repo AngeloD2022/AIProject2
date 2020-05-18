@@ -7,6 +7,8 @@ public:
     Calc();
 
     static double sigmoid(double x);
+
+    double sigmoidDerivative(double x);
 };
 
 #endif // CALC_H
