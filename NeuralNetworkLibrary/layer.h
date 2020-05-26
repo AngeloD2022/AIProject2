@@ -20,6 +20,15 @@ protected:
 private:
     int inputs;
     int outputs;
+
+    void backpropagate(QList<double> de2dy);
+
+    void backpropagate(QList<double> de2dy, QList<double> badLayerActivations);
+
+    void backpropagate(QList<double> costDerivatives, QList<double> badInput, QList<double> myBadOutput,
+                       double learnRate);
+
+    QList<double> computeWeightedSums(QList<double> inputs);
 };
 
 #endif // LAYER_H
