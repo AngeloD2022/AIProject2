@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <NeuralNetworkLibrary/backpropagationworker.h>
 #include <QThread>
+#include <NeuralNetworkLibrary/neuralnetwork.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,8 @@ private:
 
     // Thread for asynchronous backpropagation
     QThread backpropThread;
+
+    NeuralNetwork *neuralNetwork;
 };
 
 #endif // MAINWINDOW_H
