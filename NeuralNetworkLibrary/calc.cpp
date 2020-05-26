@@ -30,11 +30,29 @@ QList<double> Calc::sigmoidDerivative(QList<double> x){
 
 }
 
+QList<double> Calc::costDerivative(QList<double> output, QList<double> desiredOutput){
+    QList<double> result;
+    for (int i = 0; i < output.length(); ++i) {
+        result.append(2*(output[i]-desiredOutput[i]));
+    }
+    return result;
+}
+
 QList<double> Calc::costVector(QList<double> output, QList<double> goal) {
     QList<double> result;
     if(output.length() == goal.length()){
         for (int i = 0; i < goal.length(); ++i) {
             result.push_back(qPow(output[i]-goal[i],2));
+        }
+    }
+    return result;
+}
+
+QList<double> Calc::vectorAdd(QList<double> a, QList<double> b) {
+    QList<double> result;
+    if(a.length()==b.length()){
+        for (int i = 0; i < a.length(); ++i) {
+            result.append(a[i] + b[i]);
         }
     }
     return result;

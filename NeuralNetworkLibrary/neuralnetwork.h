@@ -12,10 +12,13 @@ public:
 private:
 
     // # Layers = total layers - input
-    QList<Layer *> *layers;
+    QList<Layer *> layers;
     int *config;
 
 
+    void backpropagate(QList<double> badActivations, QList<double> desiredOutput);
+
+    void backpropagate(QList<QList<double>> badActivations, QList<double> desiredOutput, double learnRate);
 };
 
 #endif // NEURALNETWORK_H

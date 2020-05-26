@@ -64,14 +64,15 @@ QList<double> Layer::computeWeightedSums(QList<double> inputs) {
 }
 
 
-void Layer::backpropagate(QList<double> costDerivatives, QList<double> badInput, QList<double> myBadOutput,
-                          double learnRate) {
+QList<double> Layer::backpropagate(QList<double> costDerivatives, QList<double> badInput, QList<double> myBadOutput,
+                                   double learnRate) {
 
     QList<double> myBadWeightedSums = computeWeightedSums(badInput);
     QList<double> mySigPrimes = Calc::sigmoidDerivative(myBadWeightedSums);
+    QList<double> gradientVector;
 
     for (int layerOutput = 0; layerOutput < outputs; ++layerOutput) {
-        QList<double> gradientVector;
+
 
         double myBadActivation = myBadOutput[1][layerOutput];
 
@@ -82,6 +83,11 @@ void Layer::backpropagate(QList<double> costDerivatives, QList<double> badInput,
             // Derivative of cost with respect to a weight:
             // bad input activation * sigmoidDerivative(weighted sum) *
             // derivative of cost with respect to the bad output activation
+
+            gradientVector.append(-(badInput[layerInput] * // Previous Activation
+                                  mySigPrimes[layerOutput] * // SigmoidPrime(weightedsum[layerOutput])
+                                  2 * costDerivatives[layerOutput] // 2(myBadOutput[layerOutput] - desiredOutput[layerOutput])
+                                  * learnRate));
 
             weights[layerOutput][layerInput] -=
                     badInput[layerInput] * // Previous Activation
@@ -96,4 +102,5 @@ void Layer::backpropagate(QList<double> costDerivatives, QList<double> badInput,
         biases[layerOutput] -= mySigPrimes[layerOutput] * 2 * costDerivatives[layerOutput] * learnRate;
 
     }
+    return gradientVector;
 }
