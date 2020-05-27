@@ -74,7 +74,7 @@ QList<double> Layer::backpropagate(QList<double> costDerivatives, QList<double> 
     for (int layerOutput = 0; layerOutput < outputs; ++layerOutput) {
 
 
-        double myBadActivation = myBadOutput[1][layerOutput];
+        double myBadActivation = myBadOutput[layerOutput];
 
         double myBadBias = biases[layerOutput];
 
