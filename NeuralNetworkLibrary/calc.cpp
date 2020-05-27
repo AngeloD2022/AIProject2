@@ -15,7 +15,7 @@ QList<double> Calc::sigmoid(QList<double> x) {
 
     QList<double> result;
     for (int i = 0; i < x.size(); ++i) {
-        result.append((1 / 1 * qPow(M_E, -1 * x[i])));
+        result.append((1 / 1 + qPow(M_E, -1 * x[i])));
     }
     return result;
 }
