@@ -85,9 +85,10 @@ QList<double> Layer::backpropagate(QList<double> costDerivatives, QList<double> 
             // derivative of cost with respect to the bad output activation
 
             gradientVector.append(-(badInput[layerInput] * // Previous Activation
-                                  mySigPrimes[layerOutput] * // SigmoidPrime(weightedsum[layerOutput])
-                                  2 * costDerivatives[layerOutput] // 2(myBadOutput[layerOutput] - desiredOutput[layerOutput])
-                                  * learnRate));
+                                    mySigPrimes[layerOutput] * // SigmoidPrime(weightedsum[layerOutput])
+                                    2 *
+                                    costDerivatives[layerOutput] // 2(myBadOutput[layerOutput] - desiredOutput[layerOutput])
+                                    * learnRate));
 
             weights[layerOutput][layerInput] -=
                     badInput[layerInput] * // Previous Activation

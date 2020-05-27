@@ -6,8 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    QList<int> configuration = {3,8,2};
+    QList<int> configuration = {3, 8, 2};
     neuralNetwork = new NeuralNetwork(configuration);
+
 
 }
 
@@ -15,3 +16,11 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
+
+void MainWindow::on_addButton_clicked() {
+// Here
+}
+
+void MainWindow::on_backpropButton_clicked() {
+
+}

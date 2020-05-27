@@ -20,6 +20,7 @@ SOURCES += \
     NeuralNetworkLibrary/calc.cpp \
     NeuralNetworkLibrary/layer.cpp \
     NeuralNetworkLibrary/neuralnetwork.cpp \
+    addvaluedialog.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -28,9 +29,11 @@ HEADERS += \
     NeuralNetworkLibrary/calc.h \
     NeuralNetworkLibrary/layer.h \
     NeuralNetworkLibrary/neuralnetwork.h \
+    addvaluedialog.h \
     mainwindow.h
 
 FORMS += \
+    addvaluedialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

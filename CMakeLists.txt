@@ -28,6 +28,9 @@ add_executable(AIProject2
         NeuralNetworkLibrary/neuralnetwork.h
         AIProject2.pro
         main.cpp
+        addvaluedialog.cpp
+        addvaluedialog.h
+        addvaluedialog.ui
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui)
