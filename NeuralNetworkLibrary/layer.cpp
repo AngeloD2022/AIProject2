@@ -35,9 +35,9 @@ Layer::Layer(int inputs, int outputs) {
  * @param inputs - activations of previous layer.
  * @return calculated outputs.
  */
-QVector<double> Layer::computeActivations(QVector<double> inputs) {
+QList<double> Layer::computeActivations(QList<double> inputs) {
 
-    QVector<double> result;
+    QList<double> result;
 
     for (int i = 0; i < this->outputs; ++i) {
         double out = 0;

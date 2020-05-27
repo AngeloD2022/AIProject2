@@ -14,12 +14,12 @@ public:
 
     QList<double> backpropagate(QList<double> costDerivatives, QList<double> badInput, QList<double> myBadOutput,
                                 double learnRate);
+    QList<double> computeActivations(QList<double> inputs);
 
 protected:
     QVector<QVector<double>> weights;
     QVector<double> biases;
 
-    QVector<double> computeActivations(QVector<double> inputs);
 
 private:
     int inputs;
