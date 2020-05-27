@@ -7,6 +7,8 @@ NeuralNetwork::NeuralNetwork(QList<int> configuration) {
     }
 }
 
+
+
 void NeuralNetwork::backpropagate(QList<QList<double>> badActivations, QList<double> desiredOutput, double learnRate) {
     QList<double> newdesiredoutput;
     QList<double> costDerivatives;
@@ -25,3 +27,11 @@ void NeuralNetwork::backpropagate(QList<QList<double>> badActivations, QList<dou
 
 }
 
+QList<QList<double>> NeuralNetwork::computeOutput(QList<double> input){
+    QList<QList<double>> result;
+    result.push_back(input);
+    for (int layer = 0; layer < layers.length(); ++layer) {
+        result.push_back(layers[layer]->computeActivations(result[layer]));
+    }
+    return result;
+}
